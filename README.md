@@ -39,16 +39,19 @@ Our target had a distribution of .75 to .25. The 2 categories in the target are 
 
 We modeled the data through iterative modeling. We used a logistic regression model as our first simple model.  
 We graded this model on accuracy score and it resulted in 0.7466465015648959. This was our lowest score. Therefore we used this as our baseline. It was something simple and understandable yet still decent and something we could build on.
+
 ![Logistic Regression Confusion Matrix](./images/readme1b.png)
 
 For our second model, we created a Decision Tree Classifier that scored slightly better than our simple model. We used a RFE to determine the most important features and iterated with GridSearch to find the best parameters. We found bad road conditions, road defects, traffic device failure, obscured driver vision, and driver error were the most important features. We ran a decision tree with these features as well as all features.
 Important features: 0.7555023420925494
 All features: 0.7563467557291995
 We then ran a grid search, which scored roughly the same.
+
 ![Decision Tree Confusion Matrix](./images/readme2b.png)
 
 Lastly, we used a XGBoost classifier with GridSearchCV to find the best model.
 This model performed very similarly:
+
 ![results](./images/readme1.png)
 ![XGBoostClassifier Confusion Matrix](./images/readme3b.png)
 
