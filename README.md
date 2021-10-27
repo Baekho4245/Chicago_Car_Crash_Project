@@ -29,33 +29,42 @@ Crashes details various contributory causes of the accidents such as traffic dev
 Next, we worked on the people dataset. For the people dataset, we dropped 25 unnecessary columns that we think would not influence the primary contributory cause of an accident. We removed remaining null and unknown values. We then binned by age, and this is where we saw that most of the drivers involved in accidents were between the ages of 20-39. We then converted the remaining features into binary variables. We joined this with the crash dataset and mapped the features into our target. 
 
 Lastly, we worked on the vehicle dataset. For this dataset, we only kept the vehicle defect and number of passengers variables. We turned these into binary variables.
-Our cleaned CSV's are in ![Cleaned CSVs](/data/cleaned_data/)
+Our cleaned CSV's are in [Cleaned CSVs](/data/cleaned_data/)
 
 Our data preparation process can be found in our [Data Cleaning Notebook](/appendix/Data_Cleaning.ipynb) located in the appendix.
 
 ## Modeling
 
+Our target had a distribution of .75 to .25. The 2 categories in the target are 0 for preventable and 1 for not preventable. Because our class balance was 3:1, we did not SMOTE the minority class.
+
 We modeled the data through iterative modeling. We used a logistic regression model as our first simple model.  
+We graded this model on accuracy score and it resulted in 0.7466465015648959. This was our lowest score. Therefore we used this as our baseline. It was something simple and understandable yet still decent and something we could build on.
 ![Logistic Regression Confusion Matrix](./images/readme1b.png)
 
-For our second model, we created a Decision Tree Classifier that scored slightly better than our simple model. We used a RFE to determine the most important features and iterated with GridSearch to find the best parameters. 
+For our second model, we created a Decision Tree Classifier that scored slightly better than our simple model. We used a RFE to determine the most important features and iterated with GridSearch to find the best parameters. We found bad road conditions, road defects, traffic device failure, obscured driver vision, and driver error were the most important features. We ran a decision tree with these features as well as all features.
+Important features: 0.7555023420925494
+All features: 0.7563467557291995
+We then ran a grid search, which scored roughly the same.
 ![Decision Tree Confusion Matrix](./images/readme2b.png)
 
 Lastly, we used a XGBoost classifier with GridSearchCV to find the best model.
+This model performed very similarly:
+![results](./images/readme1.png)
 ![XGBoostClassifier Confusion Matrix](./images/readme3b.png)
 
 ## Regression Results
 
-The results of our model indicated that most of the crashes were Preventable. By spending more money on drivers education in ages 20 - 39, we could curb the total accidents in Chicago drastically.
+The results of our model indicated that most of the crashes were Preventable. By spending more money on drivers education in ages 20-39, we could curb the total accidents in Chicago drastically. This would be an efficient and effective use of funds for the Vehicle Safety Board of Chicago.
+
 ![Age Ranges](./images/age_ranges.png)
 
 ## Conclusions
 
-We recommend investing in online drivers education because this could significantly lower the amount of preventable crashes in the Chicago area. We recommend driver education because it is affordable, easy to implement, and saves a lot more in labor costs vs. repairing all the roads in Chicago.
+We recommend investing in an online driver and behavior education campaign because this could significantly lower the amount of preventable crashes in the Chicago area. We recommend driver education because it is affordable, easy to implement, and saves a lot more in labor costs vs. repairing all the roads in Chicago. We also suggest that the driver education campaign target a younger audience between 20-39. It would be most effective to market it to these folks as they comprised roughly 49.2% of drivers involved in crashes.
 
 ## For More Information
 
-See the full analysis in the [Jupyter Notebook](./Chicago_Car_Crash_Project.ipynb) or review this [Presentation](./Chicago_Car_Crash_Presentation.pdf).
+See the full analysis in the [Jupyter Notebook](./Chicago_Car_Crash_Notebook.ipynb) or review this [Presentation](./Chicago_Car_Crash_Presentation.pdf).
 
 For additional info contact [Michael Lee](mailto:baekho5767@gmail.com), [Carlos Mccrum](mailto:carlosmccrum@gmail.com), and [Doug Mill](mailto:thedougmill@gmail.com).
 
@@ -65,7 +74,9 @@ For additional info contact [Michael Lee](mailto:baekho5767@gmail.com), [Carlos 
 ├── appendix
 ├── data
 ├── images
+├── .DS_Store
+├── .gitattributes
 ├── .gitignore
-├── README.md
 ├── Chicago_Car_Crash_Notebook.ipynb
-└── Chicago_Car_Crash_Presentation.pdf
+├── Chicago_Car_Crash_Presentation.pdf
+└── README.md
