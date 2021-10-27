@@ -1,4 +1,4 @@
-![seattlehouses](./images/seattlehouses.jpg)
+![ChiBeanPic](./images/ChicagoBeanpic.jpg)
 
 
 
@@ -47,7 +47,7 @@ We recommend investing in online drivers education because this could significan
 
 ## For More Information
 
-See the full analysis in the [Jupyter Notebook](./Final_edit_notebook.ipynb) or review this [Presentation](./KC_Real_Estate_Presentation.pdf).
+See the full analysis in the [Jupyter Notebook](./Final_edit_draft.ipynb) or review this [Presentation](./KC_Real_Estate_Presentation.pdf).
 
 For additional info contact [Michael Lee](mailto:baekho5767@gmail.com), [Carlos Mccrum](mailto:carlosmccrum@gmail.com), and [Doug Mill](mailto:thedougmill@gmail.com).
 
