@@ -16,6 +16,8 @@ Our task is to build inferential classification models for the Vehicle Safety Bo
 
 Our stakeholder is the Vehicle Safety Board of Chicago. They are launching a new campaign to reduce car crashes. Our task is to build an inferential model to find out  which crashes were preventable and not. We labeled ‘Preventable’ as crashes that could have easily been avoided. Not following traffic laws and negligent driving would fall under this category. ‘Less Preventable’ are crashes that would require a substantial amount of money, time, and labor to fix. Bad road conditions, vision obscurity, and bad weather conditions would fall under this category.
 
+Our stakeholder, the Vehicle Safety Board, has the resources to focus on large projects. Therefore, we to focused on 'Less Preventable' crashes as these projects were not related to human error. We also wanted to target the age groups most involved with crashes.
+
 ## Data Understanding
 
 The Vehicle Safety Board would like to better understand the causes of crashes in the Chicago area. That way, they can focus their campaign on potentially preventing some of those crashes in the future. We used data from the City of Chicago Data Portal, which contains information about Chicago Car Crashes from January 2016 to December 2020. The target variable was “primary contributory cause” as recorded by the police officer at the scene of the crash. Some of our inferential variables “defect road”, “bad road conditions”, and “obscured vision” will help us in our analysis to see if a crash was preventable. 
@@ -29,7 +31,7 @@ Crashes details various contributory causes of the accidents such as traffic dev
 Next, we worked on the people dataset. For the people dataset, we dropped 25 unnecessary columns that we think would not influence the primary contributory cause of an accident. We removed remaining null and unknown values. We then binned by age, and this is where we saw that most of the drivers involved in accidents were between the ages of 20-39. We then converted the remaining features into binary variables. We joined this with the crash dataset and mapped the features into our target. 
 
 Lastly, we worked on the vehicle dataset. For this dataset, we only kept the vehicle defect and number of passengers variables. We turned these into binary variables.
-Our cleaned CSV's are in [Cleaned CSVs](/data/cleaned_data/)
+Our cleaned CSV's are in [Cleaned CSVs](/data/cleaned_data/).
 
 Our data preparation process can be found in our [Data Cleaning Notebook](/appendix/Data_Cleaning.ipynb) located in the appendix.
 
@@ -52,7 +54,7 @@ We then ran a grid search, which scored roughly the same.
 Lastly, we used a XGBoost classifier with GridSearchCV to find the best model.
 This model performed very similarly:
 
-![results](./images/readme1.png)
+![XGB results](./images/xg_boost_gs.png)
 ![XGBoostClassifier Confusion Matrix](./images/readme3b.png)
 
 ## Regression Results
@@ -63,7 +65,7 @@ The results of our model indicated that most of the crashes were Preventable. By
 
 ## Conclusions
 
-We recommend investing in an online driver and behavior education campaign because this could significantly lower the amount of preventable crashes in the Chicago area. We recommend driver education because it is affordable, easy to implement, and saves a lot more in labor costs vs. repairing all the roads in Chicago. We also suggest that the driver education campaign target a younger audience between 20-39. It would be most effective to market it to these folks as they comprised roughly 49.2% of drivers involved in crashes.
+We recommend investing in fixing defective roads. This was the bigger contributor to less preventable crashes, followed by poor visibility, and vehicle defects. Our largest age range of drivers involved in crashes is 20-39. The biggest non-driver preventable issue this cohort faced was also defective roads. We discovered in mapping road defects that the northern side of Chicago has more crashes caused by this than the southern side. We recommend fixing up road defects in northern Chicago. We also suggest a driver education campaign targeting a younger audience between ages 20-39. We could potentially incentivize this cohort. Lastly, we could target specific hot spot areas that are known to be a magnet for crashes.
 
 ## For More Information
 
