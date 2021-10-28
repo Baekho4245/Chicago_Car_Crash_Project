@@ -40,7 +40,8 @@ Our data preparation process can be found in our [Data Cleaning Notebook](/appen
 Our target had a distribution of .75 to .25. The 2 categories in the target are 0 for preventable and 1 for not preventable. Because our class balance was 3:1, we did not SMOTE the minority class.
 
 We modeled the data through iterative modeling. We used a logistic regression model as our first simple model.  
-We graded this model on accuracy score and it resulted in 0.7466465015648959. This was our lowest score. Therefore we used this as our baseline. It was something simple and understandable yet still decent and something we could build on.
+We graded this model on accuracy score and it resulted in 0.7466465015648959. This was our lowest score. Therefore we used this as our baseline. It was something simple and understandable yet still decent and something we could build on. 
+We also graded this model on precision and got a result of 0.45.
 
 ![Logistic Regression Confusion Matrix](./images/readme1b.png)
 
@@ -48,6 +49,7 @@ For our second model, we created a Decision Tree Classifier that scored slightly
 Important features: 0.7555023420925494
 All features: 0.7563467557291995
 We then ran a grid search, which scored roughly the same.
+We graded this model on precision and got a score of 0.6. When we added RFE to this model, the precision rose to 0.63.
 
 ![Decision Tree Confusion Matrix](./images/readme2b.png)
 
@@ -59,7 +61,9 @@ This model performed very similarly:
 
 ## Regression Results
 
-The results of our model indicated that most of the crashes were Preventable. By spending more money on drivers education in ages 20-39, we could curb the total accidents in Chicago drastically. This would be an efficient and effective use of funds for the Vehicle Safety Board of Chicago.
+Our best model had an accuracy score of 75%. It had a precision score of 63%. Our precision score is out of all the times the model said it was a less preventable crash, how many times were actually a less preventable crash. Iterative modeling did well to improve precision. By directing the Vehicle Safety Board to certain hotspots of defective roads, we could make a substantial and immediate impact on accidents.
+
+The results of our model indicated that most of the crashes were Preventable. By involving drivers with driver education, we could address some of these preventable crashes. It would be particularly prudent to focus on driver education for ages 20-39. This would be an efficient and effective use of funds for the Vehicle Safety Board of Chicago.
 
 ![Age Ranges](./images/age_ranges.png)
 
@@ -76,7 +80,7 @@ For additional info contact [Michael Lee](mailto:baekho5767@gmail.com), [Carlos 
 ## Repository Structure
 
 ```
-├── appendix
+├── appendix                               
 ├── data
 ├── images
 ├── .DS_Store
