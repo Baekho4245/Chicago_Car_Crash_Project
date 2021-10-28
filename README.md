@@ -79,12 +79,11 @@ For additional info contact [Michael Lee](mailto:baekho5767@gmail.com), [Carlos 
 
 ## Repository Structure
 
+You are in the README.md right now. If you want to take a look at our Jupyter Notebook, go to the 'Chicago_Car_Crash_Notebook.ipynb' to find our data science steps for you to replicate! Within the 'appendix', you will find our data cleaning steps that we used for our final model. The 'data' folder contains the several datasets we merged together as well as the cleaned version of said files. 'images' folder contains the images used within this README. We hope you find our research informative!
 ```
 ├── appendix                               
 ├── data
 ├── images
-├── .DS_Store
-├── .gitattributes
 ├── .gitignore
 ├── Chicago_Car_Crash_Notebook.ipynb
 ├── Chicago_Car_Crash_Presentation.pdf
