@@ -85,7 +85,7 @@ You are in the README.md right now. If you want to take a look at our Jupyter No
 ├── data
 ├── images
 ├── .gitignore
+├── .gitattributes
 ├── Chicago_Car_Crash_Notebook.ipynb
-├── Chicago_Car_Crash_Notebook.pdf
 ├── Chicago_Car_Crash_Presentation.pdf
 └── README.md
