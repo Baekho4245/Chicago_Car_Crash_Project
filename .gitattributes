@@ -1,0 +1,5 @@
+*.csv filter=lfs diff=lfs merge=lfs -text
+data/cleaned_data/cleaned_crash_data.csv filter=lfs diff=lfs merge=lfs -text
+data/cleaned_data/cleaned_people_data.csv filter=lfs diff=lfs merge=lfs -text
+data/cleaned_data/cleaned_modeling_data.csv filter=lfs diff=lfs merge=lfs -text
+data/cleaned_data/cleaned_vehicle_data.csv filter=lfs diff=lfs merge=lfs -text
